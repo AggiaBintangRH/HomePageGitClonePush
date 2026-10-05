@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0d1421"/>
+  <circle cx="1030" cy="70" r="300" fill="#20385e" opacity=".6"/>
+  <rect x="100" y="100" width="92" height="92" rx="22" fill="#2367d1"/>
+  <path d="m136 128-22 18 22 18M156 128l22 18-22 18M151 121l-12 50" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="7"/>
+  <text x="225" y="162" fill="#edf4ff" font-family="Arial, sans-serif" font-size="52" font-weight="700">Git Client</text>
+  <text x="100" y="355" fill="#edf4ff" font-family="Arial, sans-serif" font-size="90" font-weight="700">Git for Android.</text>
+  <text x="105" y="430" fill="#a8b6c9" font-family="Arial, sans-serif" font-size="30">Manage your GitHub repositories directly from Android.</text>
+</svg>

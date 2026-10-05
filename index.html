@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d1421">
+  <meta name="description" content="Manage GitHub repositories directly from Android. Clone, inspect changes, commit, pull, and push from your phone.">
+  <meta property="og:title" content="Git Client — Git for Android">
+  <meta property="og:description" content="Manage GitHub repositories directly from Android.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/social-preview.svg">
+  <title>Git Client — Git for Android</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Git Client home"><span class="brand-mark" aria-hidden="true">&lt;&gt;</span><span>Git Client</span></a>
+      <button class="menu-toggle" type="button" data-menu-button aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation menu">Menu</button>
+      <nav class="site-nav" id="primary-navigation" data-navigation aria-label="Primary navigation">
+        <a href="#features">Features</a><a href="#how-it-works">How It Works</a><a href="#security">Security</a><a href="#faq">FAQ</a><a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">A focused GitHub companion for Android</span>
+          <h1>Git for Android.</h1>
+          <p class="lede">Manage your GitHub repositories directly from Android. Clone repositories, inspect changes, commit, pull, and push from your phone.</p>
+          <div class="hero-actions"><a class="button button-primary" href="https://github.com/AggiaBintangRH/GitClonePush/releases/tag/Git" rel="noreferrer">View Release <span aria-hidden="true">↗</span></a><a class="button button-secondary" href="privacy.html">Privacy Policy</a></div>
+        </div>
+        <div class="phone-stage" aria-label="Illustration of the Git Client Android interface">
+          <div class="phone-glow" aria-hidden="true"></div><div class="phone">
+            <div class="phone-screen"><div class="phone-notch" aria-hidden="true"></div><div class="phone-topline"><span>Git Client</span><span>●</span></div><h3>Your repositories</h3>
+              <div class="repo-card"><strong>mobile-notes</strong><small>main · synced recently</small></div><div class="repo-card"><strong>weather-app</strong><small>feature/settings · 2 changes</small></div>
+              <div class="status-card"><small>LOCAL STATUS</small><div class="status-row"><span class="status-dot" aria-hidden="true"></span><span>Working tree ready</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="features"><div class="container"><div class="section-heading"><span class="eyebrow">A practical mobile workflow</span><h2>The essentials for working with repositories.</h2><p>Git Client keeps familiar Git actions close at hand, with a workflow designed for an Android screen.</p></div>
+      <div class="feature-grid">
+        <article class="feature-card"><div class="icon-box" aria-hidden="true">⌁</div><h3>GitHub Authentication</h3><p>Authenticate through GitHub to access repositories you have authorized.</p></article>
+        <article class="feature-card"><div class="icon-box" aria-hidden="true">▦</div><h3>Repository Browser</h3><p>Browse the repositories available to your authenticated GitHub account.</p></article>
+        <article class="feature-card"><div class="icon-box" aria-hidden="true">↓</div><h3>Clone Repositories</h3><p>Bring a repository onto your Android device as a local workspace.</p></article>
+        <article class="feature-card"><div class="icon-box" aria-hidden="true">≡</div><h3>Git Status</h3><p>Inspect the local state of files and see what needs attention.</p></article>
+        <article class="feature-card"><div class="icon-box" aria-hidden="true">✓</div><h3>Commit Changes</h3><p>Stage changes and create commits from the device where you work.</p></article>
+        <article class="feature-card"><div class="icon-box" aria-hidden="true">↕</div><h3>Pull &amp; Push</h3><p>Synchronize with the remote repository when an Internet connection is available.</p></article>
+      </div>
+    </div></section>
+
+    <section class="section" id="how-it-works"><div class="container"><div class="section-heading"><span class="eyebrow">A clear path from account to code</span><h2>How it works.</h2><p>GitHub authentication happens through GitHub. Git Client does not provide its own GitHub password form.</p></div><div class="flow">
+      <div class="flow-step"><h3>Continue with GitHub</h3><p>Start authentication from the app.</p></div><div class="flow-step"><h3>Authorize Git Client</h3><p>Review access in GitHub.</p></div><div class="flow-step"><h3>Select a repository</h3><p>Choose from accessible repositories.</p></div><div class="flow-step"><h3>Clone and work locally</h3><p>Create a local Android workspace.</p></div><div class="flow-step"><h3>Commit, pull, and push</h3><p>Keep local and remote work aligned.</p></div>
+    </div></div></section>
+
+    <section class="section section-muted"><div class="container notice"><div class="info-card"><span class="eyebrow">Local Git experience</span><h2>Your repository, on your device.</h2><p>Cloned repositories are local Android repositories. You can inspect local Git state while offline; remote operations such as pull and push require Internet connectivity.</p></div><div class="diagram" aria-label="Repository to push workflow"><span>Repository</span><span>Clone</span><span>Local workspace</span><span>Changes</span><span>Commit</span><span>Push</span></div></div></section>
+
+    <section class="section" id="security"><div class="container security-grid"><div class="section-heading"><span class="eyebrow">Security &amp; privacy</span><h2>Clear boundaries for your account and code.</h2><p>Git Client is designed to keep GitHub authentication separate from the Git repository metadata you work with locally.</p></div><div class="info-card"><ul class="security-list"><li>Authentication is performed through GitHub.</li><li>GitHub passwords are not entered into the application.</li><li>OAuth tokens are application credentials for the authenticated session.</li><li>Git credentials should not be embedded into repository remote URLs.</li><li>Authentication credentials are stored using Android platform security mechanisms.</li></ul></div></div></section>
+
+    <section class="section section-muted"><div class="container notice"><div class="info-card"><span class="eyebrow">Open source / transparency</span><h2>Built in the open.</h2><p>When the project repository is public, users can inspect the source code and understand how the application is built.</p><p class="hero-actions"><a class="button button-primary" href="https://github.com/AggiaBintangRH/GitClonePush/releases/tag/Git" rel="noreferrer">View Release on GitHub <span aria-hidden="true">↗</span></a></p></div><div class="info-card"><h3>Independent by design</h3><p>Git Client is an independent application. GitHub is used as the repository and authentication service, not as the owner of this application.</p></div></div></section>
+
+    <section class="section" id="faq"><div class="container"><div class="section-heading"><span class="eyebrow">Questions, answered</span><h2>FAQ.</h2></div><div class="faq-list">
+      <article class="faq-item"><h3>What is Git Client?</h3><p>Git Client is an Android application for authenticating with GitHub and working with accessible repositories locally.</p></article>
+      <article class="faq-item"><h3>Do I need to create a GitHub token manually?</h3><p>No. The application uses the GitHub authentication flow so you can authorize access through GitHub.</p></article>
+      <article class="faq-item"><h3>Does Git Client ask for my GitHub password?</h3><p>No. GitHub authentication happens through GitHub, and Git Client does not provide its own GitHub password form.</p></article>
+      <article class="faq-item"><h3>Can I use private repositories?</h3><p>Access depends on the permissions granted to the authenticated GitHub account and the repository's visibility.</p></article>
+      <article class="faq-item"><h3>Does Git Client store my GitHub password?</h3><p>No. GitHub passwords are not entered into or stored by Git Client.</p></article>
+      <article class="faq-item"><h3>Do I need a GitHub account?</h3><p>Yes. GitHub authentication and repository access require a GitHub account.</p></article>
+      <article class="faq-item"><h3>Is Git Client affiliated with GitHub?</h3><p>Git Client is an independent application and is not affiliated with or endorsed by GitHub, Inc.</p></article>
+    </div></div></section>
+    <section class="cta"><div class="container"><div class="cta-card"><div><h2>Keep your Git workflow close.</h2><p>Explore the project, review the privacy notice, and decide whether Git Client fits your Android workflow.</p></div><a class="button button-primary" href="https://github.com/AggiaBintangRH/GitClonePush/releases/tag/Git" rel="noreferrer">View Release <span aria-hidden="true">↗</span></a></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-row"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">&lt;&gt;</span><span>Git Client</span></a><nav class="footer-links" aria-label="Footer navigation"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="https://github.com/AggiaBintangRH/GitClonePush/releases/tag/Git" rel="noreferrer">Release</a></nav></div><p class="copyright">© <span data-current-year>2026</span> Git Client. GitHub is a trademark of GitHub, Inc.</p></div></footer>
+</body>
+</html>

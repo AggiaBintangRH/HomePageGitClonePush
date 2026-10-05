@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Git Client logo</title>
+  <desc id="desc">A blue rounded square containing code brackets.</desc>
+  <rect width="128" height="128" rx="28" fill="#2367d1"/>
+  <path d="m48 39-25 25 25 25M80 39l25 25-25 25M72 29 56 99" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+</svg>
