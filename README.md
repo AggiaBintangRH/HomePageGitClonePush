@@ -52,4 +52,20 @@ The Homepage URL and callback URL are different concepts. The Homepage URL is th
 
 ## Scope and privacy
 
-This is a static website only. It has no backend, database, GitHub API integration, authentication flow, analytics, advertising, tracking scripts, or cookies. The terms page uses an explicit date placeholder where the developer-specific revision date is still required.
+This is a static website only. It has no backend, database, GitHub API integration, token exchange, analytics, advertising, tracking scripts, or cookies. The OAuth callback page only bridges GitHub's HTTPS redirect back to the Android custom URI.
+
+## OAuth callback bridge
+
+The GitHub OAuth Redirect URI for the Android application is:
+
+```text
+https://aggiabintangrh.github.io/HomePageGitClonePush/oauth/callback.html
+```
+
+GitHub redirects to this HTTPS callback page, which forwards only the supported OAuth response parameters to the Android application using:
+
+```text
+gitclonepush://oauth/callback
+```
+
+The HTTPS URL is the OAuth Redirect URI registered with GitHub. The custom URI only reopens the Android application after GitHub redirects to the HTTPS callback page. The callback bridge does not exchange tokens, validate OAuth state, call the GitHub API, store OAuth values, or contain client credentials; Android performs those responsibilities.

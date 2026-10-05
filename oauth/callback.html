@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#0d1421">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+  <title>Completing GitHub Authorization — Git Client</title>
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .callback-main { min-height: 72vh; display: grid; place-items: center; padding: 4rem 0; }
+    .callback-card [hidden] { display: none !important; }
+    .callback-card { width: min(100%, 32rem); max-width: 32rem; padding: clamp(1.5rem, 5vw, 2.5rem); border: 1px solid var(--color-border); border-radius: var(--radius-large); background: var(--color-surface); box-shadow: var(--shadow-small); text-align: center; }
+    .callback-icon { display: grid; place-items: center; width: 3.5rem; height: 3.5rem; margin: 0 auto 1.5rem; border-radius: 1rem; background: var(--color-primary-soft); color: var(--color-primary); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 1.2rem; font-weight: 800; }
+    .callback-card h1 { max-width: none; margin: 0 0 .8rem; font-size: clamp(1.8rem, 5vw, 2.5rem); }
+    .callback-card p { margin: 0; color: var(--color-muted); }
+    .callback-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin-top: 1.5rem; }
+    .callback-status-error { color: var(--color-text); }
+    .callback-status-error strong { display: block; margin-bottom: .35rem; }
+  </style>
+</head>
+<body>
+  <main class="callback-main" id="main-content">
+    <section class="callback-card" aria-labelledby="callback-title">
+      <div class="callback-icon" aria-hidden="true">&lt;&gt;</div>
+      <h1 id="callback-title">Completing GitHub authorization…</h1>
+      <p id="callback-message" role="status" aria-live="polite">Opening Git Client.</p>
+      <div class="callback-actions">
+        <a class="button button-primary" id="open-app" href="" hidden>Open Git Client</a>
+        <a class="button button-secondary" href="../">Return to homepage</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      "use strict";
+
+      var allowedParameters = ["code", "state", "error", "error_description", "error_uri"];
+      var currentParameters = new URLSearchParams(window.location.search);
+      var outgoingParameters = new URLSearchParams();
+      var hasCode = currentParameters.has("code");
+      var hasError = currentParameters.has("error");
+      var hasState = currentParameters.has("state");
+      var message = document.getElementById("callback-message");
+      var title = document.getElementById("callback-title");
+      var openApp = document.getElementById("open-app");
+
+      for (var index = 0; index < allowedParameters.length; index += 1) {
+        var parameter = allowedParameters[index];
+        if (currentParameters.has(parameter)) {
+          outgoingParameters.set(parameter, currentParameters.get(parameter));
+        }
+      }
+
+      function createAndroidUri() {
+        var androidUri = new URL("gitclonepush://oauth/callback");
+        var query = outgoingParameters.toString();
+        if (query) {
+          androidUri.search = query;
+        }
+        return androidUri.href;
+      }
+
+      function showError(heading, detail) {
+        title.textContent = heading;
+        message.className = "callback-status-error";
+        message.innerHTML = "<strong>GitHub authorization was not completed.</strong>" + detail;
+        openApp.hidden = true;
+      }
+
+      if (!hasCode && !hasError) {
+        showError("Invalid authorization response.", "No supported authorization result was provided.");
+        return;
+      }
+
+      if (hasCode && !hasState) {
+        showError("Incomplete authorization response.", "The authorization response is missing required state information.");
+        return;
+      }
+
+      if (hasError) {
+        title.textContent = "GitHub authorization needs attention.";
+        message.textContent = "GitHub returned an authorization result that Git Client can handle.";
+      }
+
+      var androidUri = createAndroidUri();
+      openApp.href = androidUri;
+      openApp.hidden = false;
+      window.location.replace(androidUri);
+    }());
+  </script>
+</body>
+</html>
